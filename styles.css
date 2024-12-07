@@ -28,7 +28,7 @@ nav.menu ul {
     padding: 0;
     display: flex; 
     justify-content: center; 
-    gap: 15px; 
+    gap: 7px; 
     flex-wrap: nowrap; 
 }
 
@@ -50,7 +50,7 @@ nav.menu a:hover {
 
 main.productos {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas */
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
 }
@@ -63,7 +63,7 @@ main.productos {
 }
 
 .producto img {
-    width: 100%; /* Imagenes responsivas */
+    width: 100%;
     height: auto;
     border-radius: 5px;
 }
@@ -73,6 +73,37 @@ footer {
     padding: 10px;
     background-color: #333;
     color: white;
+}
+
+/* Media Queries */
+
+/* Tabletas */
+@media (max-width: 768px) {
+    main.productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* El menú no cambia en tabletas */
+    nav.menu ul {
+        flex-wrap: nowrap; /* Asegura que el menú permanezca en una fila */
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    header.portada {
+        text-align: center;
+    }
+
+    main.productos {
+        grid-template-columns: 1fr;
+    }
+
+    /* El menú no cambia en celulares */
+    nav.menu ul {
+        flex-wrap: nowrap; /* Asegura que el menú permanezca en una fila */
+        overflow-x: auto; /* Habilita el desplazamiento horizontal si el menú es más ancho que la pantalla */
+    }
 }
 
 
